@@ -228,11 +228,6 @@ class BezierChartState extends State<BezierChart> with SingleTickerProviderState
   ///When the current indicator reach any data point a feedback is triggered
   void _onDataPointSnap(double value) {
     if (_lastValueSnapped != value && widget.config.snap) {
-      if (Platform.isIOS) {
-        HapticFeedback.heavyImpact();
-      } else {
-        Feedback.forTap(context);
-      }
       _lastValueSnapped = value;
     }
   }
